@@ -1,6 +1,4 @@
 import React from "react";
-
-import React from "react";
 import Loading from "./Loading";
 import Tours from "./Tours";
 
