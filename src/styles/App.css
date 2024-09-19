@@ -10,3 +10,34 @@ button{
     justify-content: center;
     align-items: center;
 }
+
+.app{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.tours{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tour img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.loading{
+    text-align: center;
+    font-size: 18px;
+}
+
+.no-tours{
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.price{
+    font-weight: bold;
+}

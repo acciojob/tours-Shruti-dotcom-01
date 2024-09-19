@@ -1,30 +1,20 @@
-import React from "react";
+import React, { useState } from 'react';
 
-const Tour = (props) => {
-  const { name, info, image, price, deleteTour, id } = props;
-  const [showMore, setShowMore] = React.useState(false);
-  //   console.log(name, info, price);
+const Tour = ({ tour, onDelete }) => {
+  const [showMore, setShowMore] = useState(false);
+
   return (
-    <div>
-      <h1>{name}</h1>
-      <p id="tour-item-para-rec6d6T3q5EBIdCfD">
-        {showMore ? info : info.slice(0, 200)}
-      </p>
-      <img src={image} alt="" />
-      <p>{price}</p>
-      <button
-        id="see-more-rec6d6T3q5EBIdCfD"
-        onClick={() => setShowMore((prev) => !prev)}>
-        {showMore ? "Show less" : "See more"}
-      </button>
+    <div className="tour">
+      <h2>{tour.name}</h2>
+      <img src={tour.image} alt={tour.name} />
       <p>
-        {" "}
-        <button
-          id="delete-btn-rec6d6T3q5EBIdCfD"
-          onClick={() => deleteTour(id)}>
-          deleted
+        {showMore ? tour.info : `${tour.info.substring(0, 200)}...`}
+        <button id='see-more-rec6d6T3q5EBIdCfD' onClick={() => setShowMore(!showMore)}>
+          {showMore ? 'Show less' : 'See more'}
         </button>
       </p>
+      <p id='tour-item-para-rec6d6T3q5EBIdCfD' className="price">${tour.price}</p>
+      <button id='delete-btn-rec6d6T3q5EBIdCfD' onClick={() => onDelete(tour.id)}>Delete</button>
     </div>
   );
 };
